@@ -100,6 +100,16 @@ class Event {
     }
   }
 
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is Event &&
+              runtimeType == other.runtimeType &&
+              eventId == other.eventId;
+
+  @override
+  int get hashCode => eventId.hashCode;
+
   // TODO: look at using this method
   /* Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();

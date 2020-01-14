@@ -54,4 +54,14 @@ class Attendee {
     }
     return data;
   }
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+          other is Attendee &&
+              runtimeType == other.runtimeType &&
+              emailAddress == other.emailAddress;
+
+  @override
+  int get hashCode => emailAddress.hashCode;
 }
